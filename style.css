@@ -1,0 +1,349 @@
+/* CSS Variables for Modern Theme */
+:root {
+  --bg-dark: #0f172a;
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary-color: #38bdf8;
+  --secondary-color: #818cf8;
+  --nav-bg: rgba(15, 23, 42, 0.8);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header & Navigation (Glassmorphism) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.5rem;
+}
+
+header nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+header nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Hover Underline Effect */
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Main content */
+main {
+  /* This is now a container for sections */
+  padding: 0;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  place-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* Button Style */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- CV Page Styles --- */
+.cv-container {
+  display: block; /* Override main's grid layout */
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cv-header h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.cv-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.cv-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cv-section {
+  background-color: #1e293b; /* A slightly lighter dark shade */
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cv-section h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.cv-section p, .cv-section li {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.cv-section strong {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.cv-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cv-section li::before {
+  content: '»';
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.cv-section blockquote {
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  border-left: 4px solid var(--secondary-color);
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* --- Page Section Styles --- */
+.page-section {
+  padding: 4rem 2rem;
+  background-color: var(--bg-dark); /* Ensures consistent background */
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.project-card {
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  color: var(--text-muted);
+  flex-grow: 1; /* Pushes the link to the bottom */
+  margin-bottom: 1.5rem;
+}
+
+.card-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.card-link:hover {
+  color: var(--primary-color);
+}
+
+.card-link.disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --- Game Page Styles --- */
+.game-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.game-input {
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.game-input:focus {
+  border-color: var(--primary-color);
+}
+
+#result {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+}
